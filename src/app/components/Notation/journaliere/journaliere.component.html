@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="step">
+    <h2 class="ctrl">Notation Journalière</h2>
+</div>
+<div class="container my-5">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Date Evaluation</th>
+                <th>Module</th>
+                <th>Minipole</th>
+                <th>Nombre Candidat</th>
+                <th>Nombre Anomalie</th>
+                <th>Taux</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of service.journalieres">
+                <td>{{item.datEval}}</td>
+                <td>{{item.module}}</td>
+                <td>{{item.libelleMinipole}}</td>
+                <td>{{item.nbrCan}}</td>
+                <td>{{item.nbrAnomalie}}</td>
+                <td>{{item.tauxAvrecrut}}</td>
+                <td>{{item.noteRecrut}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

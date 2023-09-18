@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="step">
+    <h2 class="ctrl">Suivi Matricule</h2>
+</div>
+<div class="container my-5">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Matricule</th>
+                <th>Q.</th>
+                <th>Nom et Prénom</th>
+                <th>Site Centralisateur</th>
+                <th>Numéro CIN</th>
+                <th>Nationalité</th>
+                <th>Longueur</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of service.matricules">
+                <td>{{item.matcle}}</td>
+                <td>{{item.qualite}}</td>
+                <td>{{item.nomPrenom}}</td>
+                <td>{{item.libLonSitCent}}</td>
+                <td>{{item.ncin}}</td>
+                <td>{{item.nationalite}}</td>
+                <td>{{item.longueur}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

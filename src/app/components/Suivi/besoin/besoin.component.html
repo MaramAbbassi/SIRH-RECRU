@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="step">
+    <h2 class="ctrl">Suivi Besoin</h2>
+</div>
+<div class="container my-5">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Code Besoin</th>
+                <th>Libellé Besoin</th>
+                <th>Date Création</th>
+                <th>Statut Validation</th>
+                <th>Age</th>
+                <th>Date Situation</th>
+                <th>Situation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of service.besoins">
+                <td>{{item.codeBesoin}}</td>
+                <td>{{item.libelleBesoin}}</td>
+                <td>{{item.dateCreation}}</td>
+                <td>{{item.statutValidation}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.dateSituation}}</td>
+                <td>{{item.situation}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

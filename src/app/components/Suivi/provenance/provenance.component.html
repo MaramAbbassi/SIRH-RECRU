@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="step">
+    <h2 class="ctrl">Suivi Provenance</h2>
+</div>
+<div class="container my-5">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Matricule</th>
+                <th>Nom et Prénom</th>
+                <th>Site Centralisateur</th>
+                <th>Date Candidature</th>
+                <th>Controle Provenance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of service.provenances">
+                <td>{{item.matcle}}</td>
+                <td>{{item.nmPres}}</td>
+                <td>{{item.libLonSitCent}}</td>
+                <td>{{item.datcandidat}}</td>
+                <td>{{item.contProv}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

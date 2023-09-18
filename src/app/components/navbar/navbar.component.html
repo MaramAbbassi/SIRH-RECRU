@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="">SIRH Recrutement</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/controle">Controle</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/Suivi" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Suivi
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="/suivi-matricule">Matricule</a></li>
+              <li><a class="dropdown-item" href="/suivi-besoin">Besoin</a></li>
+              <li><a class="dropdown-item" href="/suivi-provenance">Provenance</a></li>
+            </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/notation" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Notation
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="/notation-journaliere">Journaliere</a></li>
+                <li><a class="dropdown-item" href="/notation-mensuelle">Mensuelle</a></li>
+                <li><a class="dropdown-item" href="/notation-annuelle">Annuelle</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              
+              <a class="nav-link" href="/tdb" *ngIf="role == 'Admin' ">TDB</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="logOut()">Log Out</a>
+            </li>
+        </ul>
+        <h2 class="d-flex">{{fullName}}</h2>
+      </div>
+    </div>
+  </nav>

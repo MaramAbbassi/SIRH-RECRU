@@ -1,0 +1,95 @@
+<app-navbar></app-navbar>
+<div class="panel-heading">
+    <h2 class="pt-5 font-weight-bold">Tableau De Bord</h2>
+</div>
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-6 mt-4">
+            <div class="step">
+                <h3 class="ctrl">Controle d'accès</h3>
+            </div>
+            <form [formGroup]="signUpForm" (submit)="sendEmail">
+                <input type="hidden" name="id" formControlName="id" >
+                <div class="form-group pt-3">
+                    <div class="input-field"
+                        [class.error]="signUpForm.controls['Identite'].dirty && signUpForm.hasError('required','Identite')">
+                        <fa-icon [icon]="userIcon" class="p-2"></fa-icon>
+                        <input formControlName="Identite" id="name" type="text" placeholder="Nom & Prénom" style="width: 90%; height: 40px;">
+                    </div>
+                </div>
+                <small *ngIf="signUpForm.controls['Identite'].dirty && signUpForm.hasError('required','Identite')"
+                    class="text-danger">
+                    * Le champ Nom & Prénom est requis
+                </small>
+                <div class="form-group pt-3">
+                    <div class="input-field"
+                        [class.error]="signUpForm.controls['Etablissement'].dirty && signUpForm.hasError('required','Etablissement')">
+                        <fa-icon [icon]="buildingIcon" class="p-2"></fa-icon>
+                        <input formControlName="Etablissement" id="etab" type="text" placeholder="Etablissement" style="width: 90%; height: 40px;">
+                    </div>
+                </div>
+                <small
+                    *ngIf="signUpForm.controls['Etablissement'].dirty && signUpForm.hasError('required','Etablissement')"
+                    class="text-danger">
+                    * Le champ Etablissement est requis
+                </small>
+                <div class="form-group pt-3">
+                    <div class="input-field"
+                        [class.error]="signUpForm.controls['Privilege'].dirty && signUpForm.hasError('required','Privilege')">
+                        <fa-icon [icon]="keyIcon" class="p-2"></fa-icon>
+                        <input formControlName="Privilege" id="priv" type="text" placeholder="Privilege" style="width: 90%; height: 40px;">
+                    </div>
+                </div>
+                <small
+                    *ngIf="signUpForm.controls['Privilege'].dirty && signUpForm.hasError('required','Privilege')"
+                    class="text-danger">
+                    * Le champ Privilege est requis
+                </small>
+                <div class="form-group pt-3">
+                    <div class="input-field"
+                        [class.error]="signUpForm.controls['Matricule'].dirty && signUpForm.hasError('required','Matricule')">
+                        <fa-icon [icon]="lockIcon" class="p-2"></fa-icon>
+                        <input formControlName="Matricule" id="mat" [type]="type" placeholder="Matricule/NCIN" style="width: 90%; height: 40px;">
+                        <fa-icon [icon]="whichEyeIcon" class="p-2" (click)="hideShowPass()"></fa-icon>
+                    </div>
+                </div>
+                <small *ngIf="signUpForm.controls['Matricule'].dirty && signUpForm.hasError('required','Matricule')"
+                    class="text-danger">
+                    * Le champ Matricule/NCIN est requis
+                </small>
+                <button (click)="onSignUp() ; sendEmail()" type="submit" class="btn btn-dark btn-block mt-4" style="width: 100%; height: 40px;">
+                    Ajouter Un Utilisateur
+                </button>
+                <button (click)="onEdit()" type="submit" class="btn btn-dark btn-block mt-4" style="width: 100%; height: 40px;">
+                    Modifier Un Utilisateur
+                </button>
+                
+            </form>
+        </div>
+    
+    <div class="col-md-6">
+        <div class="container my-5">
+            <table class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Matricule</th>
+                        <th>Identité</th>
+                        <th>Etablissement</th>
+                        <th>Privilege</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr (click)="updateData(item)" *ngFor="let item of api.users">
+                        <td>{{item.matricule}}</td>
+                        <td>{{item.identite}}</td>
+                        <td>{{item.etablissement}}</td>
+                        <td>{{item.privilege}}</td>
+                        <td (click)="onDelete(item.id)"><span class="btn btn-danger">Supprimer</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

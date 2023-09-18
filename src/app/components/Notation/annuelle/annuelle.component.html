@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="step">
+    <h2 class="ctrl">Notation Annuelle</h2>
+</div>
+<div class="container my-5">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Module</th>
+                <th>Année</th>
+                <th>Minipole</th>
+                <th>Total Candidat</th>
+                <th>Total Anomalie</th>
+                <th>Taux</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of service.annuelles">
+                <td>{{item.module}}</td>
+                <td>{{item.annee}}</td>
+                <td>{{item.libelleMinipole}}</td>
+                <td>{{item.totCandidat}}</td>
+                <td>{{item.totAnomalie}}</td>
+                <td>{{item.taux}}</td>
+                <td>{{item.note}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
